@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Elara's Desk</title>
+
+  <style>
+
+    /* =========================
+       COLORS
+    ========================= */
+    :root {
+      --bg1: #f7f3ff;
+      --bg2: #efe7ff;
+      --bg3: #fff6fb;
+
+      --paper: #ffffff;
+
+      --purple: #c8b6ff;
+      --dark: #8b72d9;
+
+      --text: #222;
+      --gray: #666;
+    }
+
+
+
+    /* =========================
+       RESET
+    ========================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+    /* =========================
+       BODY
+    ========================= */
+    body {
+
+      background: linear-gradient(
+        135deg,
+        var(--bg1),
+        var(--bg2),
+        var(--bg3)
+      );
+
+      font-family: Arial, sans-serif;
+
+      color: var(--text);
+
+      overflow-x: hidden;
+
+      min-height: 100vh;
+    }
+
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+    nav {
+
+      position: sticky;
+      top: 0;
+
+      background: rgba(255,255,255,0.5);
+
+      backdrop-filter: blur(10px);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 40px;
+
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: var(--dark);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+
+      text-decoration: none;
+
+      color: var(--text);
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--dark);
+    }
+
+
+
+    /* =========================
+   DECORATIONS STARS
+========================= */
+
+.decor {
+
+  position: fixed;
+
+  opacity: 0.5;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* INDIVIDUAL STARS */
+
+.star1 {
+  top: 120px;
+  left: 80px;
+
+  font-size: 28px;
+  color: #c8b6ff;
+}
+
+.star2 {
+  top: 250px;
+  right: 150px;
+
+  font-size: 20px;
+  color: #ffd6e7;
+}
+
+.star3 {
+  bottom: 180px;
+  left: 120px;
+
+  font-size: 24px;
+  color: #bde0fe;
+}
+
+.star4 {
+  top: 400px;
+  right: 300px;
+
+  font-size: 30px;
+  color: #cdb4db;
+}
+
+.star5 {
+  top: 600px;
+  left: 250px;
+
+  font-size: 18px;
+  color: #ffc8dd;
+}
+
+.star6 {
+  top: 200px;
+  left: 400px;
+
+  font-size: 22px;
+  color: #b8c0ff;
+}
+
+.star7 {
+  bottom: 80px;
+  right: 180px;
+
+  font-size: 26px;
+  color: #ffd6a5;
+}
+
+.star8 {
+  top: 500px;
+  right: 70px;
+
+  font-size: 20px;
+  color: #a0c4ff;
+}
+
+.star9 {
+  top: 150px;
+  right: 400px;
+
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.star10 {
+  bottom: 250px;
+  left: 500px;
+
+  font-size: 18px;
+  color: #c8b6ff;
+}
+
+.star11 {
+  top: 720px;
+  left: 80px;
+
+  font-size: 24px;
+  color: #ffcfd2;
+}
+
+.star12 {
+  bottom: 120px;
+  right: 500px;
+
+  font-size: 30px;
+  color: #bde0fe;
+}
+
+
+/* =========================
+   DOODLES
+========================= */
+
+.doodle {
+
+  position: fixed;
+
+  opacity: 0.4;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  font-weight: bold;
+}
+
+
+/* INDIVIDUAL DOODLES */
+
+.doodle1 {
+
+  top: 180px;
+  left: 300px;
+
+  font-size: 40px;
+
+  color: #c8b6ff;
+
+  transform: rotate(20deg);
+}
+
+.doodle2 {
+
+  bottom: 200px;
+  right: 250px;
+
+  font-size: 30px;
+
+  color: #ffb4d2;
+}
+
+.doodle3 {
+
+  top: 500px;
+  left: 500px;
+
+  font-size: 25px;
+
+  color: #a0c4ff;
+}
+
+.doodle4 {
+
+  top: 350px;
+  right: 80px;
+
+  font-size: 35px;
+
+  color: #d8b4fe;
+}
+
+.doodle5 {
+
+  bottom: 100px;
+  left: 350px;
+
+  font-size: 30px;
+
+  color: #bde0fe;
+}
+
+
+    /* =========================
+       COLOR BLOBS
+    ========================= */
+
+    .blob {
+
+      position: fixed;
+
+      border-radius: 50%;
+
+      filter: blur(60px);
+
+      opacity: 0.4;
+
+      z-index: -1;
+    }
+
+    .blob1 {
+
+      width: 250px;
+      height: 250px;
+
+      background: #d8c4ff;
+
+      top: 100px;
+      left: -50px;
+    }
+
+    .blob2 {
+
+      width: 300px;
+      height: 300px;
+
+      background: #ffd6e7;
+
+      bottom: -50px;
+      right: -50px;
+    }
+
+
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+
+      text-align: center;
+
+      padding: 70px 20px 30px;
+    }
+
+    .hero h1 {
+
+      font-size: 55px;
+
+      color: var(--dark);
+
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+
+      color: var(--gray);
+
+      font-size: 18px;
+    }
+
+
+
+    /* =========================
+       TOP PHOTO
+    ========================= */
+
+    .top-photo {
+
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 20px;
+    }
+
+
+
+    /* =========================
+       POLAROID PHOTO
+    ========================= */
+
+    .photo {
+
+      width: 260px;
+
+      background: white;
+
+      padding: 15px;
+
+      border-radius: 15px;
+
+      text-align: center;
+
+      transform: rotate(4deg);
+
+      box-shadow:
+        0 4px 10px rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.05);
+    }
+
+    .photo img {
+
+      width: 100%;
+
+      border-radius: 10px;
+    }
+
+    .photo p {
+
+      margin-top: 10px;
+
+      color: var(--gray);
+    }
+
+
+
+    /* =========================
+       DESK LAYOUT
+    ========================= */
+
+    .desk {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 35px;
+
+      padding: 40px 30px 80px;
+    }
+
+
+
+    /* =========================
+       PAPER CARDS
+    ========================= */
+
+    .paper {
+
+      width: 260px;
+      min-height: 200px;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      box-shadow:
+        0 4px 10px rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.05);
+    }
+
+    .paper:hover {
+
+      transform:
+        scale(1.05)
+        translateY(-10px);
+    }
+
+    .paper h2 {
+
+      margin-bottom: 15px;
+
+      color: var(--dark);
+    }
+
+    .paper p {
+
+      color: var(--gray);
+
+      line-height: 1.6;
+    }
+
+
+
+    /* CARD COLORS + ROTATIONS */
+
+    .about-card {
+
+      background: #fff9f2;
+
+      transform: rotate(-5deg);
+    }
+
+    .experiences-card {
+
+      background: #f6f0ff;
+
+      transform: rotate(4deg);
+    }
+
+    .skills-card {
+
+      background: #f4fbff;
+
+      transform: rotate(6deg);
+    }
+
+    .contact-card {
+
+      background: #fff0f5;
+
+      transform: rotate(-4deg);
+    }
+
+
+
+    /* =========================
+       CONTENT PAGES
+    ========================= */
+
+    .content-page {
+
+      display: none;
+
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 40px 20px 80px;
+    }
+
+    .content-page.active {
+      display: block;
+    }
+
+    .content-box {
+
+      background: white;
+
+      padding: 35px;
+
+      border-radius: 18px;
+
+      line-height: 1.8;
+
+      box-shadow:
+        0 4px 10px rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.05);
+    }
+
+    .content-page h1 {
+
+      margin-bottom: 20px;
+
+      color: var(--dark);
+    }
+
+
+
+    /* =========================
+       EXPERIENCES GRID
+    ========================= */
+
+    .experiences-grid {
+
+      display: grid;
+
+      grid-template-columns:
+      repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 20px;
+    }
+
+    .mini-project {
+
+      background: white;
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 4px 10px rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.05);
+    }
+
+    .mini-project h3 {
+
+      margin-bottom: 10px;
+
+      color: var(--dark);
+    }
+
+    .mini-project p {
+      color: var(--gray);
+    }
+
+/* =========================
+   EXPERIENCE ITEMS
+========================= */
+
+.experience-item {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 25px;
+
+  font-weight: bold;
+
+  color: var(--dark);
+}
+
+.experience-sub {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-left: 15px;
+
+  margin-top: 8px;
+
+  color: var(--gray);
+}
+
+hr {
+
+  margin-top: 20px;
+
+  border: none;
+
+  border-top: 1px solid #ddd;
+}
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    .skill {
+
+      background: var(--purple);
+
+      padding: 10px 18px;
+
+      border-radius: 10px;
+
+      color: white;
+    }
+
+/* =========================
+   SKILLS LIST
+========================= */
+
+.skills-list {
+
+  padding-left: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  color: var(--gray);
+
+  line-height: 1.8;
+}
+
+.skills-list li {
+
+  background: #faf7ff;
+
+  padding: 15px 18px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.skills-list li:hover {
+
+  transform: translateY(-3px);
+
+  background: #f3ecff;
+}
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .back-btn {
+
+      margin-top: 25px;
+
+      background: var(--purple);
+
+      border: none;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      color: white;
+
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: var(--dark);
+    }
+
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 30px;
+
+      color: var(--gray);
+    }
+
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width: 768px) {
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      nav {
+
+        flex-direction: column;
+
+        gap: 10px;
+      }
+
+      .desk {
+        flex-direction: column;
+      }
+
+      .paper,
+      .photo {
+        width: 90%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav>
+
+    <h2>✦ Elara ✦</h2>
+
+    <ul>
+
+      <li>
+        <a href="#" onclick="showPage('home')">Home</a>
+      </li>
+
+      <li>
+        <a href="#" onclick="showPage('about')">About</a>
+      </li>
+
+      <li>
+        <a href="#" onclick="showPage('experiences')">Experiences</a>
+      </li>
+
+      <li>
+        <a href="#" onclick="showPage('skills')">Skills</a>
+      </li>
+
+      <li>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+
+  <!-- =========================
+       BACKGROUND ITEMS
+  ========================= -->
+
+<div class="decor star1">✦</div>
+<div class="decor star2">✧</div>
+<div class="decor star3">⋆</div>
+<div class="decor star4">☾</div>
+<div class="decor star5">✦</div>
+<div class="decor star6">✧</div>
+<div class="decor star7">⋆</div>
+<div class="decor star8">✦</div>
+<div class="decor star9">☁</div>
+<div class="decor star10">✧</div>
+<div class="decor star11">⋆</div>
+<div class="decor star12">✦</div>
+
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+
+<div class="doodle doodle1">〰</div>
+<div class="doodle doodle2">♡</div>
+<div class="doodle doodle3">⊹</div>
+<div class="doodle doodle4">୨ৎ</div>
+<div class="doodle doodle5">☾</div>
+  <!-- =========================
+       HOME PAGE
+  ========================= -->
+
+  <div id="homePage">
+
+    <section class="hero">
+
+      <h1>⋆｡𖦹°⭒˚｡⋆ Elara's Desk</h1>
+
+      <p>
+        A Glimpse of My Works & Impacts ✨
+      </p>
+
+    </section>
+
+
+
+    <!-- TOP POLAROID -->
+
+    <div class="top-photo">
+
+      <div class="photo">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJUhYBWpo0aF9YtAxEwTwHAdzlTIrr-5zhaw&s">
+
+        <p>
+          “thoughts, ideas, and tiny creations”
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- DESK -->
+
+    <main class="desk">
+
+
+
+      <!-- ABOUT -->
+
+      <div class="paper about-card"
+      onclick="showPage('about')">
+
+        <h2>📄 About Me</h2>
+
+        <p>
+         Get to know the person behind
+the ideas, projects,
+and tiny creations ♡
+        </p>
+
+      </div>
+
+
+
+      <!-- EXPERIENCES -->
+
+      <div class="paper experiences-card"
+      onclick="showPage('experiences')">
+
+        <h2>📁 Experiences</h2>
+
+ <p>
+  A collection of organizations,
+  projects, volunteering, and
+  meaningful experiences that
+  became part of my journey 🌷
+</p>
+
+      </div>
+
+
+
+      <!-- SKILLS -->
+
+      <div class="paper skills-card"
+      onclick="showPage('skills')">
+
+        <h2>🎨 Skills</h2>
+
+        <p>
+        A collection of skills I built
+        through creativity, teamwork,
+        leadership experiences,
+        and meaningful projects ✨
+        </p>
+
+      </div>
+
+
+
+      <!-- CONTACT -->
+
+      <div class="paper contact-card"
+      onclick="showPage('contact')">
+
+        <h2>✉️ Contact</h2>
+
+        <p>
+  Let’s connect through creativity,
+  collaborations, and new opportunities.
+  Feel free to reach out through my
+  socials or email ✨
+</p>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- =========================
+       ABOUT PAGE
+  ========================= -->
+
+  <section id="about"
+  class="content-page">
+
+    <h1>A Little Bit About Me</h1>
+
+    <div class="content-box">
+
+      <p>
+       Hello! I’m Elara, a girl who enjoys turning ideas into things people can see and feel—whether it is through words, communication, or the way an event comes together. I am currently a part of my senior high school student council as a secretary📝, where I work behind the organized and realization of ideas. I’m particularly interested in writing✍️, public relations🗣️, and event management; where ideas and communication come to life through meaningful creations.🪄
+      </p>
+
+
+      <button class="back-btn"
+      onclick="showPage('home')">
+
+        Back Home
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       EXPERIENCES PAGE
+  ========================= -->
+
+  <section id="experiences"
+  class="content-page">
+
+    <h1>Experiences</h1>
+
+    <div class="experiences-grid">
+<div class="content-box">
+
+  <h2>Organizations</h2>
+
+  <div class="experience-item">
+    <span>Red Cross Youth</span>
+    <span>2022–2025</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Member</p>
+    <p>2022–2023</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>Vice President</p>
+    <p>2023–2024</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>President</p>
+    <p>2024–2025</p>
+  </div>
+
+  <hr>
+
+  <div class="experience-item">
+    <span>JHS Student Council</span>
+    <span>2023–2025</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Member</p>
+    <p>2023–2024</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>Vice President</p>
+    <p>2024–2025</p>
+  </div>
+
+  <hr>
+
+  <div class="experience-item">
+    <span>Leo Club</span>
+    <span>2025–Now</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Member</p>
+    <p>2025–Now</p>
+  </div>
+
+  <hr>
+
+  <div class="experience-item">
+    <span>SHS Student Council</span>
+    <span>2025–Now</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Secretary</p>
+    <p>2025–Now</p>
+  </div>
+
+  <h2 style="margin-top:40px;">Projects</h2>
+
+  <div class="experience-item">
+    <span>Technopreneur</span>
+    <span>2022–2025</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Exhibition Committee</p>
+    <p>2023</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>Exhibition Coordinator</p>
+    <p>2024</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>Event Division & Vice Coordinator</p>
+    <p>2025</p>
+  </div>
+
+  <hr>
+
+  <div class="experience-item">
+    <span>Grade 9 Yearbook</span>
+    <span>2025</span>
+  </div>
+
+  <div class="experience-sub">
+    <p>Class Yearbook Coordinator</p>
+    <p>2025</p>
+  </div>
+
+  <h2 style="margin-top:40px;">Volunteers</h2>
+
+  <div class="experience-sub">
+    <p>Health Check Volunteer</p>
+    <p>2025</p>
+  </div>
+
+  <div class="experience-sub">
+    <p>Booth Assistant, International Education Expo</p>
+    <p>2025</p>
+  </div>
+
+</div>
+      </div>
+
+
+    <button class="back-btn"
+    onclick="showPage('home')">
+
+      Back Home
+
+    </button>
+
+  </section>
+
+
+
+  <!-- =========================
+     SKILLS PAGE
+========================= -->
+
+<section id="skills"
+class="content-page">
+
+  <h1>Skills</h1>
+  
+   <div class="content-box">
+
+  <ul class="skills-list">
+
+  <li>
+    Experienced in planning, coordinating,
+    and executing school-based events
+    through active involvement in student
+    organizations and leadership roles.
+  </li>
+
+  <li>
+    Organized and contributed in multiple
+    programs in student council.
+  </li>
+
+  <li>
+    Served as exhibition committee and
+    exhibition coordinator in school
+    exhibitions displaying students’
+    Information and Communication
+    Technology projects.
+  </li>
+
+  <li>
+    Familiar with teamwork,
+    problem-solving, adaptability,
+    and handling responsibilities
+    during live events.
+  </li>
+
+  <li>
+    Passionate in both creative and
+    informative writing, with experience
+    in storytelling and digital communication.
+  </li>
+
+  <li>
+    Wrote fiction and non-fiction pieces,
+    including an ongoing short story for
+    FLS3N 2026.
+  </li>
+
+  <li>
+    Created captions and content for
+    student council social media posts.
+  </li>
+
+  <li>
+    Able to adapt tone for different
+    audiences and communication styles.
+  </li>
+
+  <li>
+    Confident in communicating and
+    building connections through
+    volunteer and organizational roles.
+  </li>
+
+  <li>
+    Interacted with visitors and university
+    representatives as a booth assistant
+    at an international education expo.
+  </li>
+
+  <li>
+    Conducted and taught a trial class,
+    engaging directly with young learners.
+  </li>
+
+  <li>
+    Experienced in professional interaction,
+    adaptability, and creating positive
+    impressions in formal environments.
+  </li>
+
+</ul>
+
+<button class="back-btn"
+onclick="showPage('home')">
+
+  Back Home
+
+</button>
+
+</div>
+
+</section>
+
+  <!-- =========================
+       CONTACT PAGE
+  ========================= -->
+
+  <section id="contact"
+  class="content-page">
+
+    <h1>Contact</h1>
+
+    <div class="content-box">
+      
+      <p>📞 Phone: +62 856-9741-4657</p>
+
+      <br>
+
+      <p>📧 Email: elara.susilo@gmail.com</p>
+
+      <br>
+
+      <p>📷 Instagram: @elara.avl_</p>
+
+      <br>
+
+      <p>💻 GitHub: elarasusilo</p>
+
+      <button class="back-btn"
+      onclick="showPage('home')">
+
+        Back Home
+
+      </button>
+
+    </div>
+
+
+</section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      Made by Elara 💜
+    </p>
+
+  </footer>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    function showPage(pageId) {
+
+      // hide homepage
+      document.getElementById(
+        "homePage"
+      ).style.display = "none";
+
+
+
+      // hide all content pages
+      document.querySelectorAll(
+        ".content-page"
+      ).forEach(page => {
+
+        page.classList.remove("active");
+
+      });
+
+
+
+      // if home button clicked
+      if(pageId === "home") {
+
+        document.getElementById(
+          "homePage"
+        ).style.display = "block";
+
+      }
+
+      else {
+
+        document.getElementById(
+          pageId
+        ).classList.add("active");
+
+      }
+
+    }
+
+    console.log(
+      "Welcome to Elara's Desk ✨"
+    );
+
+  </script>
+
+</body>
+</html>
